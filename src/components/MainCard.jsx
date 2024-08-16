@@ -1,15 +1,15 @@
 import React from 'react';
 import './styles/maincard.scss';
 import { Link } from 'react-router-dom';
+import {BsBoxArrowInRight} from "react-icons/bs";
+import DetailButton from "./ButtonDetail.jsx";
 const MainCard = ({ books }) => {
   function getRandomTwoBooks(books) {
     const shuffled = books.sort(() => 0.5 - Math.random()); // Array'i karıştır
     return shuffled.slice(0, 2); // İlk iki elemanı al
   }
 
-  // Örnek kullanım
   const randomBooks = getRandomTwoBooks(books);
- 
 
   return (
     <div className="main-container">
@@ -44,12 +44,10 @@ const MainCard = ({ books }) => {
             <div>
               <p className="desc">{book.volumeInfo?.description}</p>
             </div>
-            <Link
-              to={`/detail/${book.id}`}
-              className="text-md px-2 py-1 detail-btn"
-            >
-              Details
-            </Link>
+
+            <DetailButton to={`/detail/${book.id}`} title="Details" />
+
+
           </div>
         </div>
       ))}

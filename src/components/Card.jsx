@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
+import { BsBoxArrowInRight } from "react-icons/bs";
 import './styles/card.scss';
+import DetailButton from "./ButtonDetail.jsx";
+import React from "react";
 
 // eslint-disable-next-line react/prop-types
 const Card = ({ book }) => {
@@ -21,9 +24,7 @@ const Card = ({ book }) => {
         </div>
       </div>
 
-      <Link to={`/detail/${book.id}`} className="text-md px-2 py-1 detail-btn">
-        Details
-      </Link>
+        <DetailButton to={`/detail/${book.id}`} title="Details" />
     </div>
   );
 };

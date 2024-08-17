@@ -1,9 +1,10 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { BsBoxArrowInRight } from 'react-icons/bs';
 
 import './styles/buttonDetail.scss'
 
+// eslint-disable-next-line react/prop-types
 const DetailButton = ({ to, title }) => {
     return (
         <Link
